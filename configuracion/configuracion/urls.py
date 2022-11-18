@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path
 
 # importar proyecto
-from web.views import Home
+from web.views import Home,MedicosVista,PacienteVista
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', Home)
+    path('', Home, name = 'home'),
+    path('medicos/', MedicosVista, name=  'medicos'),
+    path('Pacientes/', PacienteVista, name=  'pacientes')
 ]
